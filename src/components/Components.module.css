@@ -1,0 +1,8 @@
+/* Mesh Gradient Estático */
+.meshGradient {
+  background: radial-gradient(circle at 20% 30%, #a8d0db, transparent 50%),
+    radial-gradient(circle at 70% 20%, #b0927a, transparent 60%),
+    radial-gradient(circle at 10% 90%, #2d4739, transparent 35%),
+    radial-gradient(circle at 85% 70%, #a8201a, transparent 30%),
+    linear-gradient(135deg, #b0927a, #170312);
+}
