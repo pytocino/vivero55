@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   ParallaxProvider,
   ParallaxBanner,
@@ -10,7 +11,7 @@ import styles from "./Home.module.css";
 const Home = () => {
   return (
     <ParallaxProvider>
-      <div className="bg-[#efe6d9]">
+      <div className={"bg-[#efe6d9]"}>
         {/* Hero Section con Video en Parallax */}
         <ParallaxBanner style={{ height: "80vh" }}>
           {/* Video en lugar de imagen */}
@@ -48,7 +49,13 @@ const Home = () => {
         </ParallaxBanner>
 
         {/* Primera Sección: Imagen y texto debajo */}
-        <section className="py-16">
+        <motion.section
+          className="py-16"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <img
@@ -75,10 +82,16 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Segunda Sección: Mesh Gradient con texto superpuesto */}
-        <section className="py-8">
+        <motion.section
+          className="py-8"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="container mx-auto px-4">
             <div className="relative max-w-5xl mx-auto overflow-hidden rounded-lg shadow-xl h-[500px]">
               {/* Mesh Gradient con clase CSS */}
@@ -107,10 +120,16 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Tercera Sección: Texto y una imagen */}
-        <section className="py-16">
+        <motion.section
+          className="py-16"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center max-w-5xl mx-auto gap-12">
               <div className="md:w-1/2 order-2 md:order-1">
@@ -138,7 +157,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </ParallaxProvider>
   );

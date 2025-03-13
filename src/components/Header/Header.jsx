@@ -63,7 +63,7 @@ const Header = () => {
           className={`fixed lg:static top-0 right-0 h-screen lg:h-auto w-4/5 lg:w-auto 
           ${!menuOpen ? "translate-x-full" : "translate-x-0"}
           lg:translate-x-0 lg:opacity-100 z-50
-          shadow-lg lg:shadow-none 
+          shadow-lg lg:shadow-none lg:text-white text-gray-700
           transition-all duration-300 transform
           ${window.innerWidth < 1024 ? styles.meshGradient : ""}`}
         >
